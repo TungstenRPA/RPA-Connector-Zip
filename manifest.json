@@ -1,0 +1,157 @@
+{
+	"actions": [
+		{
+			"name": "list",
+			"type": "python",
+			"parameters": [
+				{
+					"name": "filename",
+					"type": "string"					
+				}
+			],
+			"response": [
+				{
+					"name": "status",
+					"type": "string"
+				},
+				{
+					"name": "message",
+					"type": "string"
+				},
+				{
+					"name": "zipinfo",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"import zip",
+				"rpa_return = zip.list(%1)"
+			]
+		},		
+		{
+			"name": "create",
+			"type": "python",
+			"parameters": [
+				{
+					"name": "filename",
+					"type": "string"					
+				},
+				{
+					"name": "source",
+					"type": "string"					
+				},
+				{
+					"name": "root",
+					"type": "string"					
+				},
+				{
+					"name": "overwrite",
+					"type": "number",
+					"default": 0,
+					"min": 0,
+					"max": 1				
+				}
+			],
+			"response": [
+				{
+					"name": "status",
+					"type": "string"
+				},
+				{
+					"name": "message",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"import zip",
+				"rpa_return = zip.create(%1, %2, %3, %4)"
+			]
+		},		
+		{
+			"name": "extractall",
+			"type": "python",
+			"parameters": [
+				{
+					"name": "filename",
+					"type": "string"					
+				},
+				{
+					"name": "path",
+					"type": "string"					
+				}
+			],
+			"response": [
+				{
+					"name": "status",
+					"type": "string"
+				},
+				{
+					"name": "message",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"import zip",
+				"rpa_return = zip.extractall(%1, %2)"
+			]
+		},		
+		{
+			"name": "extract",
+			"type": "python",
+			"parameters": [
+				{
+					"name": "filename",
+					"type": "string"					
+				},
+				{
+					"name": "member",
+					"type": "string"					
+				},
+				{
+					"name": "path",
+					"type": "string"					
+				}
+			],
+			"response": [
+				{
+					"name": "status",
+					"type": "string"
+				},
+				{
+					"name": "message",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"import zip",
+				"rpa_return = zip.extract(%1, %2, %3)"
+			]
+		},		
+		{
+			"name": "test",
+			"type": "python",
+			"parameters": [
+				{
+					"name": "filename",
+					"type": "string"			
+				}						
+			],
+			"response": [
+				{
+					"name": "status",
+					"type": "string"
+				},
+				{
+					"name": "message",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"import zip",
+				"rpa_return = zip.test(%1)"
+			]
+		}
+	],
+	"name": "zip",
+	"python-support": 3
+}
